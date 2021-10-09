@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<html lang="pl">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<title>Kantor</title>
+<h1><p align=center>Przelicznik Walutowy</h1></p>
+<script type="text/javascript">
+function przeliczaj() {
+var krok1;
+var krok2;
+var pln = 1.00;
+var eur = 4.55;
+switch (przelicznik.co.value)
+{
+case "PLN":
+krok1 = przelicznik.ile.value*pln;
+break;
+case "EUR":
+krok1 = przelicznik.ile.value*eur;
+break;
+default:
+krok1 = "Error";
+}
+switch (przelicznik.naCo.value)
+{
+case "PLN":
+krok2 = krok1/pln;
+break;
+case "EUR":
+krok2 = krok1/eur;
+break;
+default:
+krok2 = "Error";
+}
+przelicznik.wynik.value = Math.round(krok2 * 100 ) / 100; 
+}
+</script>
+<form action="" name="przelicznik">
+Co chcesz przeliczyc:
+<input type="text" name="ile" size="20" />
+<select name="co">
+<option name="PLN" value="PLN">PLN</option>
+<option name="EUR" value="EUR">EUR</option>
+</select>
+na:
+<select name="naCo">
+<option name="PLN" value="PLN">PLN</option>
+<option name="EUR" value="EUR">EUR</option>
+</select>
+<input type="button" value="Przelicz jednostki" onClick="przeliczaj()" />
+Wynik w przyblizeniu to:
+<input type="text" name="wynik" size="40" readonly="readonly" value="" />
+</form>
+</body>
+</html>

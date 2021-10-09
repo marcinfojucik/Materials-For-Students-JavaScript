@@ -1,0 +1,32 @@
+<!DOCTYME html>
+<html>
+<html lang="pl">
+<head>
+<meta charset="utf-8"/>
+</head>
+<body onload="odliczanie();">
+<title>JavaScrit</title>
+<h1><p align=center>Kurs JavaScrit</h1></p>
+<script>
+document.write("Hello World");
+</script>
+<script type="text/javascript">
+function odliczanie()
+{
+var today = new Date();
+var dzien = today.getDate();
+var miesiac = today.getMonth()+1;
+var rok = today.getFullYear();
+var godzina = today.getHours();
+if(godzina <10) godzina = "0"+godzina;
+var minuta = today.getMinutes();
+if(godzina <10) minuta = "0"+minuta;
+var sekunda = today.getSeconds();
+if(godzina <10) sekunda = "0"+sekunda;
+document.getElementById("zegar").innerHTML = dzien+"/"+miesiac+"/"+rok+"|"+godzina+":"+minuta+":"+sekunda;
+setTimeout ("odliczanie()",1000);
+}
+</script>
+<div id="zegar"></div>
+</body>
+</html>
